@@ -95,9 +95,26 @@ header[data-testid="stHeader"]{background:transparent!important;height:0!importa
 .symptoms-title{margin-top:10px}
 .section-number{flex:none;width:28px;height:28px;border-radius:8px;background:var(--tint);color:var(--blue-dark);display:grid;place-items:center;font-weight:800;font-size:13px}
 
-.stTextInput input,.stNumberInput input{min-height:40px;font-size:14px!important;color:var(--text)!important;background:#fff!important}
-div[data-baseweb="input"],div[data-baseweb="select"]>div{border:1px solid var(--field)!important;border-radius:8px!important;background:#fff!important;min-height:40px}
-div[data-baseweb="input"]:focus-within,div[data-baseweb="select"]>div:focus-within{border-color:var(--blue)!important;box-shadow:0 0 0 3px #155eef33!important}
+
+
+/* ═════ FIELD: text, number, select — border biru (tanpa var() agar tidak jatuh ke hitam saat deploy) ═════ */
+[data-baseweb="input"],[data-baseweb="textarea"],[data-baseweb="select"]>div{
+  border:1px solid #5b86f0!important;border-radius:8px!important;background:#fff!important;color:#172b4d!important;min-height:40px}
+[data-baseweb="base-input"],[data-testid="stTextInputRootElement"],[data-testid="stNumberInputContainer"]{
+  border-color:#5b86f0!important;background:transparent!important;border-radius:8px!important}
+[data-baseweb="base-input"]{border:0!important}
+.stTextInput input,.stNumberInput input,.stSelectbox input,textarea{
+  font-size:14px!important;color:#172b4d!important;-webkit-text-fill-color:#172b4d!important;background:transparent!important;caret-color:#155eef}
+input::placeholder,textarea::placeholder{color:#5b6980!important;opacity:1!important;-webkit-text-fill-color:#5b6980!important}
+[data-baseweb="input"]:hover,[data-baseweb="select"]>div:hover{border-color:#155eef!important}
+[data-baseweb="input"]:focus-within,[data-baseweb="select"]>div:focus-within{border-color:#155eef!important;box-shadow:0 0 0 3px rgba(21,94,239,.25)!important;outline:0!important}
+[data-baseweb="select"] div,[data-baseweb="select"] span{color:#172b4d!important}
+[data-baseweb="select"] svg{fill:#155eef!important;color:#155eef!important}
+[data-testid="stNumberInputStepUp"],[data-testid="stNumberInputStepDown"]{background:#edf4ff!important;border-color:#5b86f0!important;color:#0f46b8!important}
+[data-testid="stNumberInputStepUp"] svg,[data-testid="stNumberInputStepDown"] svg{fill:#0f46b8!important}
+[data-baseweb="popover"] ul[role="listbox"],[data-baseweb="menu"]{background:#fff!important;border:1px solid #5b86f0!important;border-radius:8px!important}
+[data-baseweb="popover"] li{background:#fff!important;color:#172b4d!important}
+[data-baseweb="popover"] li:hover,[data-baseweb="popover"] li[aria-selected="true"]{background:#edf4ff!important;color:#0f46b8!important}
 
 /* Grid gejala: 3 kolom desktop, 2 kolom mobile (container key="gejala") */
 .st-key-gejala[data-testid="stVerticalBlock"],
