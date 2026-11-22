@@ -335,7 +335,7 @@ elif ss.menu_aktif == "Diagnosis":
         for rank, i in enumerate(res["urutan_idx"]):
             bar_w = max(0, min(100, round(res["persen_list"][i])))
             best = "best-row" if rank == 0 else ""
-            badge = '<span class="badge">Terbaik</span>' if rank == 0 else ""
+            badge = '<span class="badge">Termirip</span>' if rank == 0 else ""
             rows_html += f"""<tr class="{best}"><td><strong>#{rank+1}</strong></td><td><strong>{ss.kasus_nama[i]}</strong>{badge}</td><td>{ss.kasus_grade[i]}</td><td class="opt">{res['dot_product'][i]}</td><td class="opt">{res['panjang_lama'][i]:.3f}</td><td class="opt">{res['panjang_baru']:.3f}</td><td><span class="score-track" aria-hidden="true"><span class="score-fill" style="width:{bar_w}%"></span></span>{res['hasil_cosine'][i]:.3f}</td><td>{res['persen_list'][i]:.2f}%</td></tr>"""
 
         gejala_str = ", ".join(d["gejala_aktif"]) if d["gejala_aktif"] else "—"
